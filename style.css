@@ -11,12 +11,21 @@ body {
 .board-screen {
   margin: auto;
   margin-bottom: 10px;
+  background-color: #f0f0f0;
   display: grid;
   grid-template-columns: repeat(8, auto);
   width: 800px;
   height: 600px;
   border: 10px #a52a2a solid;
   user-select: none;
+}
+
+.board-screen_grid .screen-pixel:not(.screen-pixel_first-column) {
+  border-left: 1px #a0a0a0 solid;
+}
+
+.board-screen_grid .screen-pixel:not(.screen-pixel_first-row) {
+  border-top: 1px #a0a0a0 solid;
 }
 
 .button-container {
