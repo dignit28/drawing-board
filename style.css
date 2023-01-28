@@ -1,0 +1,25 @@
+@import "./normalize.css";
+
+body {
+  padding: 8px;
+}
+
+.title {
+  text-align: center;
+}
+
+.board-screen {
+  margin: auto;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: repeat(8, auto);
+  width: 800px;
+  height: 600px;
+  border: 10px #a52a2a solid;
+  user-select: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
