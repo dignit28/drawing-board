@@ -20,6 +20,10 @@ body {
   user-select: none;
 }
 
+.screen-pixel {
+  box-sizing: border-box;
+}
+
 .board-screen_grid .screen-pixel:not(.screen-pixel_first-column) {
   border-left: 1px #a0a0a0 solid;
 }
@@ -28,7 +32,31 @@ body {
   border-top: 1px #a0a0a0 solid;
 }
 
-.button-container {
+.controls-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.radio-size-button {
+  display: none;
+}
+
+.size-button-label {
+  display: block;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.radio-size-button:checked+.size-button-label {
+  background-color: #a52a2a;
+}
+
+.size-buttons-container {
+  background-color: antiquewhite;
+}
+
+.size-button-label:hover {
+  background-color: blue;
 }

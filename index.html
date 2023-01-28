@@ -8,7 +8,51 @@
   <body>
     <h1 class="title">Drawing Board</h1>
     <main id="board-screen" class="board-screen board-screen_grid"></main>
-    <div class="button-container">
+    <div class="controls-container">
+      <span>Total pixels amount</span>
+      <div id="size-buttons-container" class="size-buttons-container">
+        <input
+          type="radio"
+          class="radio-size-button"
+          name="size"
+          id="Small"
+          data-size="5"
+        />
+        <label for="Small" class="size-button-label">Small</label>
+        <input
+          type="radio"
+          class="radio-size-button"
+          name="size"
+          id="Medium"
+          data-size="10"
+          checked
+        />
+        <label for="Medium" class="size-button-label">Medium</label>
+        <input
+          type="radio"
+          class="radio-size-button"
+          name="size"
+          id="Large"
+          data-size="15"
+        />
+        <label for="Large" class="size-button-label">Large</label>
+        <input
+          type="radio"
+          class="radio-size-button"
+          name="size"
+          id="Huge"
+          data-size="20"
+        />
+        <label for="Huge" class="size-button-label">Huge</label>
+        <input
+          type="radio"
+          class="radio-size-button"
+          name="size"
+          id="Colossal"
+          data-size="25"
+        />
+        <label for="Colossal" class="size-button-label">Colossal</label>
+      </div>
       <button id="grid-button">Toggle grid</button>
       <button id="clear-button" class="clear-button">Clear</button>
     </div>
