@@ -11,7 +11,7 @@ body {
 .board-screen {
   margin: auto;
   margin-bottom: 10px;
-  background-color: #f0f0f0;
+  background-color: hsl(0, 0%, 95%);
   display: grid;
   grid-template-columns: repeat(8, auto);
   width: 800px;
@@ -38,25 +38,25 @@ body {
   align-items: center;
 }
 
-.radio-size-button {
+.radio-button_invisible {
   display: none;
 }
 
-.size-button-label {
+.radio-button-label {
   display: block;
   text-align: center;
   width: 100%;
   height: 100%;
 }
 
-.radio-size-button:checked+.size-button-label {
+.radio-button_invisible:checked+.radio-button-label {
   background-color: #a52a2a;
 }
 
-.size-buttons-container {
+.radio-buttons-container {
   background-color: antiquewhite;
 }
 
-.size-button-label:hover {
+.radio-button-label:hover {
   background-color: blue;
 }

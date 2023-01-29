@@ -10,51 +10,89 @@
     <main id="board-screen" class="board-screen board-screen_grid"></main>
     <div class="controls-container">
       <span>Total pixels amount</span>
-      <div id="size-buttons-container" class="size-buttons-container">
+      <div id="size-buttons-container" class="radio-buttons-container">
         <input
           type="radio"
-          class="radio-size-button"
+          class="radio-size-button radio-button_invisible"
           name="size"
           id="Small"
           data-size="5"
         />
-        <label for="Small" class="size-button-label">Small</label>
+        <label for="Small" class="radio-button-label">Small</label>
         <input
           type="radio"
-          class="radio-size-button"
+          class="radio-size-button radio-button_invisible"
           name="size"
           id="Medium"
           data-size="10"
           checked
         />
-        <label for="Medium" class="size-button-label">Medium</label>
+        <label for="Medium" class="radio-button-label">Medium</label>
         <input
           type="radio"
-          class="radio-size-button"
+          class="radio-size-button radio-button_invisible"
           name="size"
           id="Large"
           data-size="15"
         />
-        <label for="Large" class="size-button-label">Large</label>
+        <label for="Large" class="radio-button-label">Large</label>
         <input
           type="radio"
-          class="radio-size-button"
+          class="radio-size-button radio-button_invisible"
           name="size"
           id="Huge"
           data-size="20"
         />
-        <label for="Huge" class="size-button-label">Huge</label>
+        <label for="Huge" class="radio-button-label">Huge</label>
         <input
           type="radio"
-          class="radio-size-button"
+          class="radio-size-button radio-button_invisible"
           name="size"
           id="Colossal"
           data-size="25"
         />
-        <label for="Colossal" class="size-button-label">Colossal</label>
+        <label for="Colossal" class="radio-button-label">Colossal</label>
       </div>
       <button id="grid-button">Toggle grid</button>
       <button id="clear-button" class="clear-button">Clear</button>
+      <label for="bg-color">Background lightness</label>
+      <input
+        type="range"
+        id="bg-color"
+        name="bg-color"
+        min="0"
+        max="100"
+        step="5"
+        value="95"
+      />
+      <span>Mode</span>
+      <div id="color-buttons-container" class="radio-buttons-container">
+        <input
+          type="radio"
+          class="radio-button_invisible"
+          name="color"
+          id="darken"
+          checked
+        />
+        <label for="darken" class="radio-button-label">Darken</label>
+        <input
+          type="radio"
+          class="radio-button_invisible"
+          name="color"
+          id="lighten"
+        />
+        <label for="lighten" class="radio-button-label">Lighten</label>
+      </div>
+      <label for="intensity">Intensity</label>
+      <input
+        type="range"
+        id="intensity"
+        name="intensity"
+        min="5"
+        max="100"
+        step="5"
+        value="100"
+      />
     </div>
     <script src="./index.js"></script>
   </body>
