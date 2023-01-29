@@ -1,11 +1,14 @@
 "use strict";
 
+let screenPixels = [];
 let mouseIsDown = false;
+let backgroundLightness = 95;
 
 const boardScreen = document.querySelector("#board-screen");
 const clearButton = document.querySelector("#clear-button");
 const sizeRadioButtons = document.querySelectorAll(".radio-size-button");
 const toggleGridButton = document.querySelector("#grid-button");
+const backgroundColorControl = document.querySelector("#bg-color");
 
 // Watch mouse button status
 document.addEventListener("mousedown", () => {
@@ -17,6 +20,7 @@ document.addEventListener("mouseup", () => {
 
 // Fill screen with 'pixels'
 const fillScreen = (size) => {
+  screenPixels = [];
   boardScreen.style.gridTemplateColumns = `repeat(${size * 4}, auto)`;
   const totalPixels = 12 * Math.pow(size, 2);
   for (let count = 0; count < totalPixels; count++) {
@@ -26,6 +30,7 @@ const fillScreen = (size) => {
       screenPixel.classList.add("screen-pixel_first-column");
     if (count < size * 4) screenPixel.classList.add("screen-pixel_first-row");
     boardScreen.appendChild(screenPixel);
+    screenPixels.push(screenPixel);
   }
 };
 
@@ -66,5 +71,16 @@ sizeRadioButtons.forEach((button) =>
     fillScreen(event.target.dataset.size);
   })
 );
+
+backgroundColorControl.addEventListener("change", (event) => {
+  boardScreen.style.backgroundColor = `hsl(0, 0%, ${event.target.value}%)`;
+  let gridLightness = 50;
+  if (event.target.value <= 65 && event.target.value >= 40) {
+    gridLightness = 25
+  }
+  screenPixels.forEach((element) => {
+    element.style.borderColor = `hsl(0, 0%, ${gridLightness}%)`;
+  });
+});
 
 fillScreen(10);

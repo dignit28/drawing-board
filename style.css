@@ -25,11 +25,11 @@ body {
 }
 
 .board-screen_grid .screen-pixel:not(.screen-pixel_first-column) {
-  border-left: 1px #a0a0a0 solid;
+  border-left: 1px hsl(0, 0%, 50%) solid;
 }
 
 .board-screen_grid .screen-pixel:not(.screen-pixel_first-row) {
-  border-top: 1px #a0a0a0 solid;
+  border-top: 1px hsl(0, 0%, 50%) solid;
 }
 
 .controls-container {
