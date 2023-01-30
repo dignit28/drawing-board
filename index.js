@@ -3,12 +3,15 @@
 let screenPixels = [];
 let mouseIsDown = false;
 let backgroundLightness = 95;
+// When darken is chosen -> color === 0; else color === 100
+let color = 0;
 
 const boardScreen = document.querySelector("#board-screen");
 const clearButton = document.querySelector("#clear-button");
 const sizeRadioButtons = document.querySelectorAll(".radio-size-button");
 const toggleGridButton = document.querySelector("#grid-button");
 const backgroundColorControl = document.querySelector("#bg-color");
+const colorRadioButtons = document.querySelectorAll(".radio-color-button");
 
 // Watch mouse button status
 document.addEventListener("mousedown", () => {
@@ -37,13 +40,13 @@ const fillScreen = (size) => {
 // Color change for initial mousedown
 boardScreen.addEventListener("mousedown", (event) => {
   if (event.target.classList.contains("screen-pixel"))
-    event.target.style.backgroundColor = "#808080";
+    event.target.style.backgroundColor = `hsl(0, 0%, ${color}%)`;
 });
 
 // Color change for subsequent mouse movement
 boardScreen.addEventListener("mouseover", (event) => {
   if (mouseIsDown && event.target.classList.contains("screen-pixel"))
-    event.target.style.backgroundColor = "#808080";
+    event.target.style.backgroundColor = `hsl(0, 0%, ${color}%)`;
 });
 
 // Clear button
@@ -76,11 +79,18 @@ backgroundColorControl.addEventListener("change", (event) => {
   boardScreen.style.backgroundColor = `hsl(0, 0%, ${event.target.value}%)`;
   let gridLightness = 50;
   if (event.target.value <= 65 && event.target.value >= 40) {
-    gridLightness = 25
+    gridLightness = 25;
   }
   screenPixels.forEach((element) => {
     element.style.borderColor = `hsl(0, 0%, ${gridLightness}%)`;
   });
 });
+
+// Change color
+colorRadioButtons.forEach((button) =>
+  button.addEventListener("change", (event) => {
+    color = event.target.dataset.darken === "true" ? 0 : 100;
+  })
+);
 
 fillScreen(10);
