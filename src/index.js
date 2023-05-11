@@ -1,5 +1,7 @@
 "use strict";
 
+import "./style.css";
+
 let screenPixels = [];
 let mouseIsDown = false;
 let backgroundLightness = 95;
