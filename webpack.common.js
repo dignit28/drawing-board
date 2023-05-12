@@ -4,6 +4,7 @@ module.exports = {
   mode: "development",
   entry: {
     main: "./src/index.js",
+    vendor: "./src/vendor.css",
   },
   output: {
     filename: "main-[contenthash].js",

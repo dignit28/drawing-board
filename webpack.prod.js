@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerWebpackPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const RemoveEmptyScriptsPlugin = require("webpack-remove-empty-scripts");
 
 module.exports = merge(common, {
   mode: "production",
@@ -17,8 +18,9 @@ module.exports = merge(common, {
     minimizer: [new CssMinimizerWebpackPlugin(), new TerserPlugin()],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: "[name]-[contenthash].css" }),
     new CleanWebpackPlugin(),
+    new RemoveEmptyScriptsPlugin(),
+    new MiniCssExtractPlugin({ filename: "[name]-[contenthash].css" }),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       minify: {
